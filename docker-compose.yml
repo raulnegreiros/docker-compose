@@ -73,6 +73,35 @@ services:
       options:
         max-size: 100m
 
+################
+# iot-agent amqp
+################
+#  iotagent-amqp:
+#    image: dojot/iotagent-rabbitmq
+#    depends_on:
+#      - kafka
+#      - data-broker
+#      - auth
+#      - rabbitmq-for-iotagent
+#    restart: always
+#    logging:
+#      driver: json-file
+#      options:
+#        max-size: 100m        
+#
+#  rabbitmq-for-iotagent:
+#    image: rabbitmq:3.7-alpine
+#    restart: always
+#    ports:
+#      - 5672:5672
+#    environment:
+#      RABBITMQ_DEFAULT_USER: 'test'
+#      RABBITMQ_DEFAULT_PASS: 'test'
+#    logging:
+#      driver: json-file
+#      options:
+#        max-size: 100m
+        
   gui:
     image: dojot/gui:latest
     restart: always
